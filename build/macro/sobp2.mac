@@ -13,8 +13,8 @@
 # Aggiunta della fisica 
 
 #/Physics/addPhysics HADRONTHERAPY_1
-#/Physics/addPhysics BNCT
-/Physics/addPhysics CUSTOM_NCEPT
+/Physics/addPhysics BNCT
+#/Physics/addPhysics CUSTOM_NCEPT
 
 /run/numberOfThreads 1
 
@@ -117,6 +117,9 @@
 /changePhantom/size 20 20 20  cm
 /changePhantom/position 10 0 0 cm
 
+# tutto il cervello con boro (100ppm)
+/changePhantom/material BoroTissue
+
 ###################################################
 # USE THE FOLLOWING FOR A VOXELLIZED DETECTOR
 ###################################################
@@ -126,10 +129,13 @@
 
 # cambia materiale del tumore
 # senza boro
-/changeB10/material soft_tissue
+#/changeB10/material soft_tissue
 
 # con boro
 #/changeB10/material WaterB10
+
+# anche tumore con boro 100 ppm
+/changeB10/material BoroTissue
 
 
 # Put the detector in the lower left corner of the phantom
@@ -151,4 +157,4 @@
 # Dose scale should be: 2e7 / nEvents * voxelSizeInCm2
 
 /run/printProgress 12500
-/run/beamOn 100000
+/run/beamOn 50000

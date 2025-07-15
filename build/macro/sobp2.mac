@@ -1,0 +1,154 @@
+#################################################
+# Fascio di protoni policromatico per produrre SOBP
+# Direzione lungo +X, punto di emissione fuori dal phantom
+# Obiettivo: misurare la dose assorbita in profondità
+#################################################
+
+# Verbosità
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# Aggiunta della fisica 
+
+#/Physics/addPhysics HADRONTHERAPY_1
+#/Physics/addPhysics BNCT
+/Physics/addPhysics CUSTOM_NCEPT
+
+/run/numberOfThreads 1
+
+# Inizializza geometria e fisica
+/run/initialize
+
+####################################################
+# Set here the CUT and the STEP MAX for the tracking.
+# Suggested values of cut and step
+#
+# Set cuts OUTSIDE the detector
+#
+/run/setCut 1 m
+
+# Set cuts ONLY inside the detector
+#
+/run/setCutForRegion DetectorLog 0.1 mm
+
+
+/run/setCutForAGivenParticle e- 0.1 mm
+/run/setCutForAGivenParticle e+ 0.1 mm
+/run/setCutForAGivenParticle proton 0.1 mm
+
+#################################################
+# Imposta il fascio di protoni (GPS)
+#################################################
+
+/gps/particle proton
+/gps/pos/type Beam
+/gps/pos/shape Circle
+/gps/pos/radius 5.0 cm
+/gps/pos/sigma_r 0.0 mm
+/gps/pos/centre -5. 0. 0. cm
+/gps/direction 1.0 0.0 0.0
+
+
+/gps/ene/type User
+/gps/hist/type energy
+
+# istogramma 
+/gps/hist/point 99.755 0.004542
+/gps/hist/point 100.480 0.009160
+/gps/hist/point 101.201 0.009264
+/gps/hist/point 101.917 0.009371
+/gps/hist/point 102.629 0.009482
+/gps/hist/point 103.338 0.009597
+/gps/hist/point 104.042 0.009715
+/gps/hist/point 104.742 0.009838
+/gps/hist/point 105.438 0.009966
+/gps/hist/point 106.131 0.010098
+/gps/hist/point 106.820 0.010235
+/gps/hist/point 107.505 0.010378
+/gps/hist/point 108.186 0.010527
+/gps/hist/point 108.864 0.010681
+/gps/hist/point 109.539 0.010843
+/gps/hist/point 110.210 0.011011
+/gps/hist/point 110.878 0.011187
+/gps/hist/point 111.542 0.011371
+/gps/hist/point 112.203 0.011565
+/gps/hist/point 112.861 0.011767
+/gps/hist/point 113.516 0.011980
+/gps/hist/point 114.168 0.012204
+/gps/hist/point 114.816 0.012441
+/gps/hist/point 115.462 0.012691
+/gps/hist/point 116.105 0.012956
+/gps/hist/point 116.744 0.013237
+/gps/hist/point 117.381 0.013536
+/gps/hist/point 118.015 0.013855
+/gps/hist/point 118.646 0.014196
+/gps/hist/point 119.274 0.014562
+/gps/hist/point 119.900 0.014956
+/gps/hist/point 120.523 0.015382
+/gps/hist/point 121.143 0.015844
+/gps/hist/point 121.761 0.016347
+/gps/hist/point 122.376 0.016899
+/gps/hist/point 122.988 0.017506
+/gps/hist/point 123.598 0.018180
+/gps/hist/point 124.206 0.018933
+/gps/hist/point 124.811 0.019781
+/gps/hist/point 125.413 0.020746
+/gps/hist/point 126.014 0.021858
+/gps/hist/point 126.611 0.023157
+/gps/hist/point 127.207 0.024701
+/gps/hist/point 127.800 0.026577
+/gps/hist/point 128.391 0.028923
+/gps/hist/point 128.980 0.031970
+/gps/hist/point 129.566 0.036150
+/gps/hist/point 130.151 0.042385
+/gps/hist/point 130.733 0.053180
+/gps/hist/point 131.313 0.080079
+/gps/hist/point 131.890 0.124192
+
+###################################################
+#		DETECTOR DESCRIPTION
+########################################################
+# USE THE FOLLOWING FOUR LINES FOR DEFINITION OF PHANTOM
+########################################################
+
+
+/changePhantom/size 20 20 20  cm
+/changePhantom/position 10 0 0 cm
+
+###################################################
+# USE THE FOLLOWING FOR A VOXELLIZED DETECTOR
+###################################################
+#
+/changeB10/size 5 20 20 cm
+/changeB10/voxelSize 1.0 200 200 mm
+
+# cambia materiale del tumore
+# senza boro
+/changeB10/material soft_tissue
+
+# con boro
+#/changeB10/material WaterB10
+
+
+# Put the detector in the lower left corner of the phantom
+/changeB10/displacement 7.5 0 0 cm
+
+/changePhantom/update
+
+#########################
+
+#################################################
+# Avvia la simulazione
+#################################################
+
+# If secondary particles dose & fluence are needed
+/analysis/secondary true
+#/analysis/computeLet
+
+#/rbe/doseScale 7777770
+# Dose scale should be: 2e7 / nEvents * voxelSizeInCm2
+
+/run/printProgress 12500
+/run/beamOn 100000

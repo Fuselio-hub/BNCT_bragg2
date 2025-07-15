@@ -1,0 +1,7 @@
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/BNCT.dir
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/edit_cache.dir
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/rebuild_cache.dir
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/list_install_components.dir
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/install.dir
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/install/local.dir
+/home/raffaele/geant4-v11.3.2/workspace/BNCT_bragg2/build/CMakeFiles/install/strip.dir

@@ -1,0 +1,202 @@
+# G.A.P.Cirrone, pablo.cirrone@lns.infn.it
+#
+# Default macro file with visualisation. It is called if no argument is provided at run
+#
+#########################
+# Set of the verboses
+#
+#/control/verbose 2
+#/tracking/verbose 2
+#/run/verbose 2
+#/event/verbose 2
+
+##########################
+# Set of the physic models
+#
+/Physics/addPhysics BNCT
+/run/numberOfThreads 1
+
+##########################
+# Initialisation procedure
+#
+/run/initialize
+
+####################################################
+# Set here the CUT and the STEP MAX for the tracking.
+# Suggested values of cut and step
+#
+# Set cuts OUTSIDE the detector
+#
+/run/setCut 1 m
+
+# Set cuts ONLY inside the detector
+#
+/run/setCutForRegion DetectorLog 0.1 mm
+
+
+/run/setCutForAGivenParticle e- 0.1 mm
+/run/setCutForAGivenParticle e+ 0.1 mm
+/run/setCutForAGivenParticle proton 0.1 mm
+
+#########################
+# Set the primary particle type,
+# energy and position along the X direction
+#
+
+#---------------------------gps-----------------
+/gps/pos/shape Circle
+/gps/pos/centre -5. 0. 0. cm
+/gps/pos/radius 5. cm
+/gps/particle neutron
+/gps/pos/type Plane
+
+# the incident surface is in the y-z plane
+#
+/gps/pos/rot1 0 1 0
+/gps/pos/rot2 0 0 1
+
+# the beam is travelling along the x-axis without any angular dispersion (angular despersion set to 0.0)
+#
+/gps/ang/rot1 0 0 1
+/gps/ang/rot2 0 1 0
+/gps/ang/type iso
+/gps/ang/sigma_r 0.0 deg
+
+
+#
+/gps/ene/type User
+#/gps/ene/emspec 0
+/gps/hist/type energy
+/gps/hist/point 4.95223e-8 0
+#/gps/hist/point 9.68216e-08 1.20422e+13 #qui sto provando a togliere il primo bin diverso da 0 per fare un confronto
+#/gps/hist/point 1.2505e-07 4.06315e+12
+#/gps/hist/point 2.44765e-07 8.22493e+12
+/gps/hist/point 9.68216e-08 0
+/gps/hist/point 1.2505e-07 0
+/gps/hist/point 2.44765e-07 0
+/gps/hist/point 3.13609e-07 8.97788e+12
+/gps/hist/point 4.01817e-07 8.15746e+12
+/gps/hist/point 4.9072e-07 1.00334e+13
+/gps/hist/point 6.18768e-07 9.84804e+12
+/gps/hist/point 7.92806e-07 9.83431e+12
+/gps/hist/point 1.0077e-06 9.44257e+12
+/gps/hist/point 1.23066e-06 1.07478e+13
+/gps/hist/point 1.56425e-06 9.54763e+12
+/gps/hist/point 2.00422e-06 7.2949e+12
+/gps/hist/point 2.42816e-06 8.09412e+12
+/gps/hist/point 3.11112e-06 7.78025e+12
+/gps/hist/point 3.98617e-06 7.5982e+12
+/gps/hist/point 5.06667e-06 5.75784e+12
+/gps/hist/point 6.08952e-06 5.18711e+12
+/gps/hist/point 7.80229e-06 4.81531e+12
+/gps/hist/point 1.0077e-05 3.96176e+12
+/gps/hist/point 1.22086e-05 3.7674e+12
+/gps/hist/point 1.55179e-05 3.42461e+12
+/gps/hist/point 1.98826e-05 2.82133e+12
+/gps/hist/point 2.54748e-05 2.64329e+12
+/gps/hist/point 3.11112e-05 2.05213e+12
+/gps/hist/point 3.95442e-05 1.75498e+12
+/gps/hist/point 5.02632e-05 1.52505e+12
+/gps/hist/point 6.38876e-05 1.29757e+12
+/gps/hist/point 7.80229e-05 1.11312e+12
+/gps/hist/point 9.9172e-05 8.69262e+11
+/gps/hist/point 0.000127066 8.1788e+11
+/gps/hist/point 0.000153943 6.65482e+11
+/gps/hist/point 0.000195672 5.66336e+11
+/gps/hist/point 0.00025272 4.48171e+11
+/gps/hist/point 0.000321222 3.80147e+11
+/gps/hist/point 0.00038917 3.22143e+11
+/gps/hist/point 0.000494659 2.61528e+11
+/gps/hist/point 0.000628742 2.13936e+11
+/gps/hist/point 0.000805585 1.90322e+11
+/gps/hist/point 0.00099172 1.33084e+11
+/gps/hist/point 0.0012505 1.20432e+11
+/gps/hist/point 0.00161508 9.32049e+10
+/gps/hist/point 0.00194113 8.18855e+10
+/gps/hist/point 0.00248711 6.60198e+10
+/gps/hist/point 0.00318664 5.25399e+10
+/gps/hist/point 0.00405042 4.05106e+10
+/gps/hist/point 0.00494659 3.33522e+10
+/gps/hist/point 0.00623735 2.53201e+10
+/gps/hist/point 0.00799169 1.89216e+10
+/gps/hist/point 0.00968216 1.45469e+10
+/gps/hist/point 0.012505 1.03236e+10
+/gps/hist/point 0.0156425 7.3625e+09
+/gps/hist/point 0.020203 4.23922e+09
+/gps/hist/point 0.0244765 2.53093e+09
+/gps/hist/point 0.0313609 1.29077e+09
+/gps/hist/point 0.0398617 9.40583e+08
+/gps/hist/point 0.0510734 3.95775e+08
+/gps/hist/point 0.0618768 3.98532e+08
+/gps/hist/point 0.0799169 1.19652e+08
+/gps/hist/point 0.10077 1.22024e+07
+/gps/hist/point 0.124054 2.58695e+07
+/gps/hist/point 0.153943 3.2732e+07
+/gps/hist/point 0.200422 2.01315e+07
+/gps/hist/point 0.250707 2.7286e+06
+/gps/hist/point 0.311112 0
+/gps/hist/point 0.392293 1.52403e+06
+/gps/hist/point 0.510734 0
+/gps/hist/point 0.644004 1.78562e+06
+/gps/hist/point 0.99968 0 
+
+###################################################
+#		DETECTOR DESCRIPTION
+########################################################
+# USE THE FOLLOWING FOUR LINES FOR DEFINITION OF PHANTOM
+########################################################
+
+
+/changePhantom/size 20 20 20  cm
+/changePhantom/position 5 0 0 cm
+
+###################################################
+# USE THE FOLLOWING FOR A VOXELLIZED DETECTOR
+###################################################
+#
+/changeB10/size 1 20 20 cm
+/changeB10/voxelSize 1.0 200 200 mm
+
+# Put the detector in the lower left corner of the phantom
+#
+/changeB10/displacement 6 0 0 cm
+/changePhantom/update
+
+#########################
+# Start of the run
+#
+# If secondary particles dose & fluence are needed
+/analysis/secondary false
+#/analysis/writeDoseFile
+#/analysis/computeLet
+
+### RBE
+#/rbe/verbose 2
+#/rbe/loadLemTable data/rbe/lem1.csv
+#/rbe/calculation 1
+#/rbe/accumulate 1
+
+## U87
+#/rbe/dcut 8.0 gray
+#/rbe/alphaX 0.11 gray(-1)
+#/rbe/betaX 0.06 gray(-2)
+#/rbe/lemTable data/rbe/U87_LEM.dat
+#/rbe/cellLine U87
+
+## AG01522
+#/rbe/dcut 9.5 gray
+#/rbe/alphaX 0.54 gray(-1)
+#/rbe/betaX 0.062 gray(-2)
+#/rbe/lemTable data/rbe/AG01522_LEM.dat
+
+/rbe/doseScale 7777770
+# Dose scale should be: 2e7 / nEvents * voxelSizeInCm2
+
+
+# Default material is water liquid
+#/changePhantom/material Water_ts
+/changePhantom/material WaterB
+
+
+/run/printProgress 1000
+/run/beamOn 100000

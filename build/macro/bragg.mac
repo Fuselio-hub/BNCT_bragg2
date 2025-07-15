@@ -1,0 +1,87 @@
+#################################################
+# Fascio di protoni monocromatico
+# Direzione lungo +X, punto di emissione fuori dal phantom
+# Obiettivo: misurare la dose assorbita in profondità
+#################################################
+
+# Verbosità
+/control/verbose 1
+/run/verbose 1
+/event/verbose 0
+/tracking/verbose 0
+
+# Aggiunta della fisica 
+
+/Physics/addPhysics BNCT
+  
+/run/numberOfThreads 1
+
+# Inizializza geometria e fisica
+/run/initialize
+
+####################################################
+# Set here the CUT and the STEP MAX for the tracking.
+# Suggested values of cut and step
+#
+# Set cuts OUTSIDE the detector
+#
+/run/setCut 1 m
+
+# Set cuts ONLY inside the detector
+#
+/run/setCutForRegion DetectorLog 0.1 mm
+
+
+/run/setCutForAGivenParticle e- 0.1 mm
+/run/setCutForAGivenParticle e+ 0.1 mm
+/run/setCutForAGivenParticle proton 0.1 mm
+
+#################################################
+# Imposta il fascio di protoni (GPS)
+#################################################
+/gps/particle proton
+/gps/pos/type Beam
+/gps/pos/shape Circle
+/gps/pos/radius 5.0 cm
+/gps/pos/sigma_r 0.0 mm
+/gps/pos/centre -5. 0. 0. cm
+/gps/direction 1.0 0.0 0.0
+/gps/ene/type Mono
+/gps/ene/mono 125.0 MeV
+
+###################################################
+# USE THE FOLLOWING FOR A VOXELLIZED DETECTOR
+###################################################
+#
+/changeB10/size 1 20 20 cm
+/changeB10/voxelSize 1.0 200 200 mm
+
+# cambia materiale del tumore
+# senza boro
+/changeB10/material soft_tissue
+
+# con boro
+#/changeB10/material WaterB10
+
+
+# Put the detector in the lower left corner of the phantom
+/changeB10/displacement 4 0 0 cm
+
+/changePhantom/update
+
+#########################
+
+
+#################################################
+# Avvia la simulazione
+#################################################
+
+# If secondary particles dose & fluence are needed
+/analysis/secondary true
+/analysis/computeLet false
+
+#/rbe/doseScale 7777770
+# Dose scale should be: 2e7 / nEvents * voxelSizeInCm2
+
+/run/printProgress 20000
+/run/beamOn 500000

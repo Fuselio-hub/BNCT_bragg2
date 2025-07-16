@@ -14,7 +14,6 @@
 
 #/Physics/addPhysics HADRONTHERAPY_1
 /Physics/addPhysics BNCT
-#/Physics/addPhysics CUSTOM_NCEPT
 
 /run/numberOfThreads 1
 
@@ -117,8 +116,11 @@
 /changePhantom/size 20 20 20  cm
 /changePhantom/position 10 0 0 cm
 
+# soft tissue
+/changePhantom/material soft_tissue
+
 # tutto il cervello con boro (100ppm)
-/changePhantom/material BoroTissue
+#changePhantom/material BoroTissue
 
 ###################################################
 # USE THE FOLLOWING FOR A VOXELLIZED DETECTOR
@@ -134,7 +136,7 @@
 # con boro
 #/changeB10/material WaterB10
 
-# anche tumore con boro 100 ppm
+# tumore con boro 100 ppm
 /changeB10/material BoroTissue
 
 
@@ -151,10 +153,17 @@
 
 # If secondary particles dose & fluence are needed
 /analysis/secondary true
-#/analysis/computeLet
+/analysis/computeLet
 
-#/rbe/doseScale 7777770
-# Dose scale should be: 2e7 / nEvents * voxelSizeInCm2
+/rbe/verbose 1
+/rbe/loadLemTable data/rbe/lem1.csv
+/rbe/calculation 1
+/rbe/accumulate 1
+
+/rbe/cellLine U87
+
+/rbe/doseScale 7777770
+# Dose scale should be: 2e7 / nEvents * voxelSizeInCm2 (???)
 
 /run/printProgress 12500
-/run/beamOn 50000
+/run/beamOn 100000

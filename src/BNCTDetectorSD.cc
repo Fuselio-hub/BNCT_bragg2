@@ -59,6 +59,8 @@
 #include "BNCTRBE.hh"
 #include <G4AccumulableManager.hh>
 
+#include "G4AnalysisManager.hh"
+
 
 /////////////////////////////////////////////////////////////////////////////
 BNCTDetectorSD::BNCTDetectorSD(G4String name):
@@ -80,7 +82,8 @@ void BNCTDetectorSD::Initialize(G4HCofThisEvent*)
 {
     
     HitsCollection = new BNCTDetectorHitsCollection(sensitiveDetectorName,
-                                                             collectionName[0]);
+                                                            collectionName[0]);
+    recordedTracks.clear();  // This is crucial!
 }
 
 /////////////////////////////////////////////////////////////////////////////
@@ -107,6 +110,15 @@ G4bool BNCTDetectorSD::ProcessHits(G4Step* aStep, G4TouchableHistory* )
     G4int trackID = theTrack -> GetTrackID();
     
     G4double energyDeposit = aStep -> GetTotalEnergyDeposit();
+
+    if (trackID >= 1 and recordedTracks.count(trackID) == 0){
+        recordedTracks.insert(trackID);
+        auto analysisManager = G4AnalysisManager::Instance();
+        analysisManager->FillNtupleDColumn(0,0, kineticEnergy);
+        analysisManager->FillNtupleIColumn(0,1, pdg);
+        analysisManager->AddNtupleRow(0);        
+        
+    }
     
     G4double DX = aStep -> GetStepLength();
     G4int Z = particleDef-> GetAtomicNumber();

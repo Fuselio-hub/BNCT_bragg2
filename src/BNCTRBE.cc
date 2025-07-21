@@ -139,7 +139,7 @@ vector<G4String> split(const G4String& line, const G4String& delimiter)
 void BNCTRBE::LoadLEMTable(G4String path)
 {
     // TODO: Check for presence? Perhaps we want to be able to load more
-    path="/data/rbe/lem1.csv";
+    // path="/data/rbe/lem1.csv";
     ifstream in(path);
     if (!in)
     {

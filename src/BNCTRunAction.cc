@@ -61,6 +61,8 @@ BNCTRunAction::~BNCTRunAction()
 /////////////////////////////////////////////////////////////////////////////
 void BNCTRunAction::BeginOfRunAction(const G4Run* aRun)
 {   
+    auto analysisManager = G4AnalysisManager::Instance();
+    
     G4AccumulableManager* accumulableManager = G4AccumulableManager::Instance();
     accumulableManager->Reset();
 
@@ -75,6 +77,17 @@ void BNCTRunAction::BeginOfRunAction(const G4Run* aRun)
     
     electromagnetic = 0;
     hadronic = 0;
+
+    // per spettro neutroni
+    G4String filename = "neutron_spectrum.root";
+    analysisManager->OpenFile(filename);
+
+    analysisManager -> CreateNtuple("BNCT", "BNCT");
+    analysisManager -> CreateNtupleDColumn("kineticEnergy"); 
+    analysisManager -> CreateNtupleIColumn("particleID");
+
+    analysisManager -> FinishNtuple();
+    
 }
 
 /////////////////////////////////////////////////////////////////////////////

@@ -10,37 +10,9 @@ project(BNCT)
 #
 option(WITH_GEANT4_UIVIS "Build example with Geant4 UI and Vis drivers" ON)
 if(WITH_GEANT4_UIVIS)
-  find_package(Geant4 REQUIRED COMPONENTS
-    G4em-standard
-    G4decay
-    G4radioactivedecay
-    G4hadronic-inelastic
-    G4hadronic-elastic
-    G4hadronic-qmd
-    G4hadronic-binary
-    G4hadronic-util
-    G4hadronic-hp
-    G4run
-    G4tracking
-    G4particles
-    ui_all
-    vis_all
-  )
+  find_package(Geant4 REQUIRED ui_all vis_all)
 else()
-  find_package(Geant4 REQUIRED COMPONENTS
-    G4em-standard
-    G4decay
-    G4radioactivedecay
-    G4hadronic-inelastic
-    G4hadronic-elastic
-    G4hadronic-qmd
-    G4hadronic-binary
-    G4hadronic-util
-    G4hadronic-hp
-    G4run
-    G4tracking
-    G4particles
-  )
+  find_package(Geant4 REQUIRED)
 endif()
 
 #----------------------------------------------------------------------------
@@ -59,7 +31,7 @@ include(${Geant4_USE_FILE})
 include_directories(${PROJECT_SOURCE_DIR}/include
                     ${PROJECT_SOURCE_DIR}/shared/include
                     ${Geant4_INCLUDE_DIR})
-                    # ${ROOT_INCLUDE_DIRS})
+		    # ${ROOT_INCLUDE_DIRS})
 file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc
                   ${PROJECT_SOURCE_DIR}/shared/src/*.cc)
 file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh
@@ -95,6 +67,7 @@ foreach(_file ${macros} ${modulators} ${fields} ${other_files} ${data})
     COPYONLY
     )
 endforeach()
+
 
 #----------------------------------------------------------------------------
 # Install the executable to 'bin' directory under CMAKE_INSTALL_PREFIX

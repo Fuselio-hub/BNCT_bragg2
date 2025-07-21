@@ -151,8 +151,8 @@ private:
     G4double fDoseScale { 1.0 };
 
     // Output paths (TODO: Change to analysis tools)
-    G4String fAlphaBetaPath { "AlphaAndBeta.out" };
-    G4String fRBEPath { "RBE.out" };
+    G4String fAlphaBetaPath { "AlphaAndBeta.csv" };
+    G4String fRBEPath { "RBE.csv" };
 
     // Voxelization
     G4int fNumberOfVoxelsAlongX, fNumberOfVoxelsAlongY, fNumberOfVoxelsAlongZ;

@@ -147,7 +147,7 @@ int main(int argc ,char ** argv)
     }
     
     else {
-	    //UImanager -> ApplyCommand("/control/execute macro/defaultMacro_vis.mac");
+
         UImanager -> ApplyCommand("/control/execute macro/sobp2.mac");
         ui -> SessionStart();
         delete ui;
@@ -185,5 +185,4 @@ int main(int argc ,char ** argv)
     delete runManager;
     delete analysis;
     return 0;
-    
 }

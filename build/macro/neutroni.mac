@@ -1,7 +1,5 @@
 #################################################
-# Fascio di protoni policromatico per produrre SOBP
-# Direzione lungo +X, punto di emissione fuori dal phantom
-# Obiettivo: misurare la dose assorbita in profondità
+# NEUTRONI
 #################################################
 
 # Verbosità
@@ -12,9 +10,7 @@
 
 # Aggiunta della fisica 
 
-#/Physics/addPhysics HADRONTHERAPY_1
 /Physics/addPhysics BNCT
-
 
 /run/numberOfThreads 4
 
@@ -39,14 +35,12 @@
 /run/setCutForAGivenParticle proton 0.1 mm
 
 #################################################
-# Imposta il fascio di protoni (GPS)
+# Imposta il fascio di neutroni (GPS)
 #################################################
 
-/gps/particle proton
-/gps/pos/type Beam
-/gps/pos/shape Circle
-/gps/pos/radius 5.0 cm
-/gps/pos/sigma_r 0.0 mm
+/gps/particle neutron
+/gps/pos/type Point
+
 /gps/pos/centre -5. 0. 0. cm
 /gps/direction 1.0 0.0 0.0
 
@@ -76,13 +70,10 @@
 # cambia materiale del tumore
 
 # senza boro
-/changeB10/material soft_tissue
+#/changeB10/material soft_tissue
 
 # tumore con boro10 100 ppm
-#/changeB10/material BoroTissue
-
-# tumore con boro11 100ppm (per confronto)
-#/changeB10/material Boro11Tissue
+/changeB10/material BoroTissue
 
 # Put the detector in the lower left corner of the phantom
 /changeB10/displacement 7.5 0 0 cm

@@ -91,8 +91,7 @@ aRegion(0)
     DefineMaterials();
     // Define here the material of the water phantom and of the detector
     SetPhantomMaterial("soft_tissue");
-    SetB10Material("soft_tissue"); // per picco di bragg
-    //SetB10Material("WaterB10"); // per terapia ncept   // si può cambiare nella macro
+    SetB10Material("BoroTissue"); 
     
     // Construct geometry (messenger commands)
     // SetDetectorSize(4.*cm, 4.*cm, 4.*cm);
@@ -175,15 +174,14 @@ void BNCTDetectorConstruction::DefineMaterials()
     G4Isotope* B10 = new G4Isotope("B10", 5, 10, 10.811*g/mole);
     G4Isotope* B11 = new G4Isotope("B11", 5, 11, 11.0093*g/mole);
 //
-    G4Element* eB = new G4Element("Borone","B",1);
+    G4Element* eB10 = new G4Element("Borone","B",1);
 //  eB->AddIsotope(B10,19.1*perCent);
 //  eB->AddIsotope(B11,80.9*perCent);
-    eB->AddIsotope(B10,100.*perCent);  // 100% boro-10!!!
+    eB10->AddIsotope(B10,100.*perCent);  // 100% boro-10!!!
 //
-    G4Material * Boron = new G4Material("Boron",2.46*g/cm3,1);
-    Boron->AddElement(eB, 1.);
+    G4Material * Boro10 = new G4Material("Boro10",2.46*g/cm3,1);
+    Boro10->AddElement(eB10, 1.);
 //
-    
     //preso da esempio Human_Phantom: MIRD soft tissue. vengono aggiunti 
     G4double d = 0.9869 *g/cm3;
     G4Material* soft = new G4Material("soft_tissue",d,16);
@@ -207,17 +205,26 @@ void BNCTDetectorConstruction::DefineMaterials()
     
     G4double density = 1.*g/cm3;
     G4Material * B10Water = new G4Material("WaterB10",d,2); //2 sta per due componenti (tessuto molle e boro) 
-    //B10Water-> AddMaterial (H2O ,fractionmass=0.9999475);
     B10Water-> AddMaterial (soft ,fractionmass=99*perCent); //qui ho messo soft al posto di H2O
-    B10Water-> AddMaterial (Boron ,fractionmass=1*perCent);  // quantità esagerata di boro ma solo per provare
-    
-    G4Material * B10Water2 = new G4Material("WaterB",d,2);
-    B10Water2 -> AddMaterial (soft,0.999985);
-    B10Water2 -> AddMaterial (Boron, 0.000015);
-    //G4Material * B10Water2 = new G4Material("WaterB",density,2);
-    //B10Water2-> AddMaterial (H2O ,0.999985);
-    //B10Water2-> AddMaterial (Boron ,0.000015);//15 ppm nella box dove sta l'acqua
-    
+    B10Water-> AddMaterial (Boro10 ,fractionmass=1*perCent);  // quantità esagerata di boro ma solo per provare
+        
+    G4Material * BoroTissue = new G4Material("BoroTissue",d,2);
+    BoroTissue -> AddMaterial (soft, fractionmass = 99.99*perCent);
+    BoroTissue -> AddMaterial (Boro10, fractionmass = 0.01*perCent ); //100 ppm di boro
+
+    // soft tissue con boro11 per confronto
+    G4Element* eB11 = new G4Element("Borone11", "B", 1);
+    eB11->AddIsotope(B11, 100.*perCent);  // 100% B11
+
+    // Crea materiale puro di B11 (densità identica a Boron)
+    G4Material* Boron11 = new G4Material("Boron11", 2.46*g/cm3, 1);
+    Boron11->AddElement(eB11, 1.);
+
+    // Crea Boro11Tissue come miscela di soft tissue e B11
+    G4Material* Boro11Tissue = new G4Material("Boro11Tissue", d, 2);
+    Boro11Tissue->AddMaterial(soft, 99.99*perCent);
+    Boro11Tissue->AddMaterial(Boron11, 0.01*perCent);
+
   //  G4cout << *(G4Material::GetMaterialTable()) << G4endl;
 }
 /////////////////////////////////////////////////////////////////////////////

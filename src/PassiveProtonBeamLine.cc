@@ -111,7 +111,7 @@ void PassiveProtonBeamLine::ConstructPassiveProtonBeamLine()
     const G4double worldZ = 400.0 *cm;
     G4bool isotopes = false;
     
-    G4Material* airNist =  G4NistManager::Instance()->FindOrBuildMaterial("G4_AIR", isotopes);
+    G4Material* airNist =  G4NistManager::Instance()->FindOrBuildMaterial("G4_Galactic", isotopes);
     G4Box* treatmentRoom = new G4Box("TreatmentRoom",worldX,worldY,worldZ);
     G4LogicalVolume* logicTreatmentRoom = new G4LogicalVolume(treatmentRoom,
                                                               airNist,

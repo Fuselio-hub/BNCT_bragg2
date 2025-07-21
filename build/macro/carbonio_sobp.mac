@@ -12,10 +12,9 @@
 
 # Aggiunta della fisica 
 
-#/Physics/addPhysics HADRONTHERAPY_1
 /Physics/addPhysics BNCT
 
-/run/numberOfThreads 1
+/run/numberOfThreads 4
 
 # Inizializza geometria e fisica
 /run/initialize
@@ -45,9 +44,9 @@
 /gps/ion 6 12
 /gps/pos/type Beam
 /gps/pos/shape Circle
-/gps/pos/centre -10.0 0.0 0.0 cm
+/gps/pos/centre -5.0 0.0 0.0 cm
 /gps/pos/radius 1 cm
-/gps/pos/sigma_r 2.123 mm
+/gps/pos/sigma_r 0.0 mm
 /gps/direction 1.0 0.0 0.0
 
 /gps/ene/type User
@@ -113,7 +112,7 @@
 
 
 /changePhantom/size 20 20 20  cm
-/changePhantom/position 5 0 0 cm
+/changePhantom/position 10 0 0 cm
 
 ###################################################
 # USE THE FOLLOWING FOR A VOXELLIZED DETECTOR
@@ -127,11 +126,11 @@
 #/changeB10/material soft_tissue
 
 # con boro
-/changeB10/material WaterB10
+/changeB10/material BoroTissue
 
 
 # Put the detector in the lower left corner of the phantom
-/changeB10/displacement 7.5 0 0 cm
+/changeB10/displacement 12.5 0 0 cm
 
 /changePhantom/update
 
@@ -148,5 +147,5 @@
 #/rbe/doseScale 7777770
 # Dose scale should be: 2e7 / nEvents * voxelSizeInCm2
 
-/run/printProgress 100
-/run/beamOn 5000
+/run/printProgress 10000
+/run/beamOn 100000

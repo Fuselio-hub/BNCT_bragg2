@@ -68,34 +68,6 @@
 #include "G4HadronPhysicsQGSP_BIC_HP.hh"
 #include "G4HadronPhysicsQGSP_BIC_AllHP.hh"
 
-// EM, decay
-#include "G4EmStandardPhysics_option3.hh"
-
-// Particles
-#include "G4Proton.hh"
-#include "G4Neutron.hh"
-#include "G4GenericIon.hh"
-
-// Elastic
-#include "G4ChipsElasticModel.hh"
-
-// Proton inelastic
-#include "G4BinaryCascade.hh"
-
-// Neutron inelastic & capture
-#include "G4NeutronInelasticProcess.hh"
-#include "G4NeutronHPInelastic.hh"
-#include "G4NeutronCaptureProcess.hh"
-#include "G4NeutronHPCapture.hh"
-#include "G4NeutronRadCapture.hh"
-
-// Ion inelastic
-#include "G4IonInelasticProcess.hh"
-#include "G4BinaryLightIonReaction.hh"
-#include "G4QMDModel.hh"
-#include "G4FTFModel.hh"
-
-
 /////////////////////////////////////////////////////////////////////////////
 BNCTPhysicsList::BNCTPhysicsList() : G4VModularPhysicsList()
 {
@@ -206,6 +178,7 @@ void BNCTPhysicsList::AddPhysicsList(const G4String& name)
     
     else if (name == "BNCT") {
         AddPhysicsList("standard_opt4");
+        G4EmParameters::Instance()->SetMinEnergy(10*eV);
         hadronPhys.push_back( new G4DecayPhysics());
         hadronPhys.push_back( new G4RadioactiveDecayPhysics());
         hadronPhys.push_back( new G4IonBinaryCascadePhysics());
@@ -217,121 +190,7 @@ void BNCTPhysicsList::AddPhysicsList(const G4String& name)
        // hadronPhys.push_back( new G4NeutronTrackingCut());
     
     G4cout << "BNCT PHYSICS LIST has been activated" << G4endl;
-    }
-    else if (name == "CUSTOM_NCEPT") {
-    G4cout << "CUSTOM_NCEPT PHYSICS LIST has been activated" << G4endl;
-
-    // === Fisica elettromagnetica accurata ===
-    RegisterPhysics(new G4EmStandardPhysics_option3());
-
-    // === Decadimento e decadimento radioattivo ===
-    RegisterPhysics(new G4DecayPhysics());
-    RegisterPhysics(new G4RadioactiveDecayPhysics());
-
-    // === Proton Inelastic: 0 – 9.9 GeV con BinaryCascade ===
-    {
-        auto proton = G4Proton::ProtonDefinition();
-        auto pmanager = proton->GetProcessManager();
-
-        auto pInel = new G4ProtonInelasticProcess();
-        auto pModel = new G4BinaryCascade();
-        pModel->SetMinEnergy(0.0);
-        pModel->SetMaxEnergy(9.9 * GeV);
-        pInel->RegisterMe(pModel);
-
-        pmanager->AddDiscreteProcess(pInel);
-    }
-
-    // === Neutron Elastic ===
-    {
-        auto neutron = G4Neutron::NeutronDefinition();
-        auto pmanager = neutron->GetProcessManager();
-
-        auto nelastic = new G4HadronElasticProcess();
-
-        auto hpElastic = new G4NeutronHPElastic();
-        hpElastic->SetMinEnergy(0.0);
-        hpElastic->SetMaxEnergy(20.0 * MeV);
-
-        auto chipsElastic = new G4ChipsElasticModel();
-        chipsElastic->SetMinEnergy(20.0 * MeV);
-        chipsElastic->SetMaxEnergy(100.0 * TeV);
-
-        nelastic->RegisterMe(hpElastic);
-        nelastic->RegisterMe(chipsElastic);
-
-        pmanager->AddDiscreteProcess(nelastic);
-    }
-
-    // === Neutron Inelastic ===
-    {
-        auto neutron = G4Neutron::NeutronDefinition();
-        auto pmanager = neutron->GetProcessManager();
-
-        auto ninel = new G4NeutronInelasticProcess();
-
-        auto hpInel = new G4NeutronHPInelastic();
-        hpInel->SetMinEnergy(0.0);
-        hpInel->SetMaxEnergy(20.0 * MeV);
-
-        auto bicModel = new G4BinaryCascade();
-        bicModel->SetMinEnergy(19.9 * MeV);
-        bicModel->SetMaxEnergy(9.9 * GeV);
-
-        ninel->RegisterMe(hpInel);
-        ninel->RegisterMe(bicModel);
-
-        pmanager->AddDiscreteProcess(ninel);
-    }
-
-    // === Neutron Capture ===
-    {
-        auto neutron = G4Neutron::NeutronDefinition();
-        auto pmanager = neutron->GetProcessManager();
-
-        auto ncapture = new G4NeutronCaptureProcess();
-
-        auto hpCap = new G4NeutronHPCapture();
-        hpCap->SetMinEnergy(0.0);
-        hpCap->SetMaxEnergy(20.0 * MeV);
-
-        auto radCap = new G4NeutronRadCapture();
-        radCap->SetMinEnergy(19.9 * MeV);
-        radCap->SetMaxEnergy(100.0 * TeV);
-
-        ncapture->RegisterMe(hpCap);
-        ncapture->RegisterMe(radCap);
-
-        pmanager->AddDiscreteProcess(ncapture);
-    }
-
-    // === Ion Inelastic ===
-    {
-        auto ions = G4GenericIon::GenericIonDefinition();
-        auto pmanager = ions->GetProcessManager();
-
-        auto ionInel = new G4IonInelasticProcess();
-
-        auto bicModel = new G4BinaryLightIonReaction();
-        bicModel->SetMinEnergy(0.0);
-        bicModel->SetMaxEnergy(110.0 * MeV);
-
-        auto qmdModel = new G4QMDModel();
-        qmdModel->SetMinEnergy(100.0 * MeV);
-        qmdModel->SetMaxEnergy(10.0 * GeV);
-
-        auto ftfpModel = new G4FTFModel();
-        ftfpModel->SetMinEnergy(9.99 * GeV);
-        ftfpModel->SetMaxEnergy(1.0 * TeV);
-
-        ionInel->RegisterMe(bicModel);
-        ionInel->RegisterMe(qmdModel);
-        ionInel->RegisterMe(ftfpModel);
-
-        pmanager->AddDiscreteProcess(ionInel);
-    }
 }
-
 
     else {
         G4cout << "PhysicsList::AddPhysicsList: <" << name << ">"

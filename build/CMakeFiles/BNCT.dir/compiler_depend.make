@@ -586,6 +586,8 @@ CMakeFiles/BNCT.dir/BNCT.cc.o: ../BNCT.cc \
   /usr/local/include/Geant4/G4VHit.hh \
   /usr/local/include/Geant4/G4THitsCollection.hh \
   /usr/local/include/Geant4/G4Allocator.hh \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h \
   ../include/BNCTPrimaryGeneratorAction.hh \
   /usr/local/include/Geant4/G4VUserPrimaryGeneratorAction.hh \
   /usr/local/include/Geant4/G4ParticleGun.hh \
@@ -2388,6 +2390,8 @@ CMakeFiles/BNCT.dir/src/BNCTDetectorConstruction.cc.o: ../src/BNCTDetectorConstr
   /usr/local/include/Geant4/G4VHit.hh \
   /usr/local/include/Geant4/G4THitsCollection.hh \
   /usr/local/include/Geant4/G4Allocator.hh \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h \
   ../include/BNCTMatrix.hh \
   /usr/local/include/Geant4/G4ParticleDefinition.hh \
   ../include/BNCTLet.hh \
@@ -3696,7 +3700,9 @@ CMakeFiles/BNCT.dir/src/BNCTDetectorROGeometry.cc.o: ../src/BNCTDetectorROGeomet
   ../include/BNCTDetectorHit.hh \
   /usr/local/include/Geant4/G4VHit.hh \
   /usr/local/include/Geant4/G4THitsCollection.hh \
-  /usr/local/include/Geant4/G4Allocator.hh
+  /usr/local/include/Geant4/G4Allocator.hh \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h
 
 CMakeFiles/BNCT.dir/src/BNCTDetectorSD.cc.o: ../src/BNCTDetectorSD.cc \
   /usr/include/stdc-predef.h \
@@ -4122,6 +4128,8 @@ CMakeFiles/BNCT.dir/src/BNCTDetectorSD.cc.o: ../src/BNCTDetectorSD.cc \
   /usr/local/include/Geant4/G4THitsCollection.hh \
   /usr/local/include/Geant4/G4Allocator.hh \
   /usr/local/include/Geant4/globals.hh \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h \
   ../include/BNCTDetectorHit.hh \
   /usr/local/include/Geant4/G4Step.hh \
   /usr/local/include/Geant4/G4VTouchable.hh \
@@ -4416,7 +4424,67 @@ CMakeFiles/BNCT.dir/src/BNCTDetectorSD.cc.o: ../src/BNCTDetectorSD.cc \
   /usr/local/include/Geant4/G4AccUnorderedMap.hh \
   /usr/local/include/Geant4/G4AccUnorderedMap.icc \
   /usr/local/include/Geant4/G4AccVector.hh \
-  /usr/local/include/Geant4/G4AccVector.icc
+  /usr/local/include/Geant4/G4AccVector.icc \
+  /usr/local/include/Geant4/G4AnalysisManager.hh \
+  /usr/local/include/Geant4/G4GenericAnalysisManager.hh \
+  /usr/local/include/Geant4/G4ToolsAnalysisManager.hh \
+  /usr/local/include/Geant4/G4VAnalysisManager.hh \
+  /usr/local/include/Geant4/G4AnalysisManagerState.hh \
+  /usr/local/include/Geant4/G4AnalysisVerbose.hh \
+  /usr/local/include/Geant4/G4AnalysisUtilities.hh \
+  /usr/local/include/Geant4/G4VTBaseHnManager.hh \
+  /usr/local/include/Geant4/G4HnInformation.hh \
+  /usr/local/include/Geant4/G4BinScheme.hh \
+  /usr/local/include/Geant4/G4Fcn.hh \
+  /usr/local/include/Geant4/G4VAnalysisManager.icc \
+  /usr/local/include/Geant4/G4HnManager.hh \
+  /usr/local/include/Geant4/G4BaseAnalysisManager.hh \
+  /usr/local/include/Geant4/G4NtupleBookingManager.hh \
+  /usr/local/include/Geant4/tools/ntuple_booking \
+  /usr/local/include/Geant4/tools/cids \
+  /usr/local/include/Geant4/tools/cid \
+  /usr/local/include/Geant4/tools/typedefs \
+  /usr/local/include/Geant4/tools/forit \
+  /usr/local/include/Geant4/G4NtupleBookingManager.icc \
+  /usr/local/include/Geant4/G4VNtupleManager.hh \
+  /usr/local/include/Geant4/G4VFileManager.hh \
+  /usr/local/include/Geant4/G4BaseFileManager.hh \
+  /usr/local/include/Geant4/G4VTHnFileManager.hh \
+  /usr/local/include/Geant4/G4TH1ToolsManager.hh \
+  /usr/local/include/Geant4/G4THnToolsManager.hh \
+  /usr/local/include/Geant4/G4THnManager.hh \
+  /usr/local/include/Geant4/G4THnManager.icc \
+  /usr/local/include/Geant4/G4THnMessenger.hh \
+  /usr/local/include/Geant4/G4THnToolsManager.icc \
+  /usr/local/include/Geant4/G4THnMessenger.icc \
+  /usr/local/include/Geant4/G4Tokenizer.hh \
+  /usr/local/include/Geant4/G4TH2ToolsManager.hh \
+  /usr/local/include/Geant4/G4TH3ToolsManager.hh \
+  /usr/local/include/Geant4/G4TP1ToolsManager.hh \
+  /usr/local/include/Geant4/G4TP2ToolsManager.hh \
+  /usr/local/include/Geant4/tools/histo/h1d \
+  /usr/local/include/Geant4/tools/histo/h1 \
+  /usr/local/include/Geant4/tools/histo/b1 \
+  /usr/local/include/Geant4/tools/histo/base_histo \
+  /usr/local/include/Geant4/tools/histo/histo_data \
+  /usr/local/include/Geant4/tools/histo/axes \
+  /usr/local/include/Geant4/tools/histo/axis \
+  /usr/local/include/Geant4/tools/eqT \
+  /usr/local/include/Geant4/tools/histo/h2d \
+  /usr/local/include/Geant4/tools/histo/h2 \
+  /usr/local/include/Geant4/tools/histo/b2 \
+  /usr/local/include/Geant4/tools/histo/h3d \
+  /usr/local/include/Geant4/tools/histo/h3 \
+  /usr/local/include/Geant4/tools/histo/b3 \
+  /usr/local/include/Geant4/tools/histo/p1d \
+  /usr/local/include/Geant4/tools/histo/p1 \
+  /usr/local/include/Geant4/tools/histo/profile_data \
+  /usr/local/include/Geant4/tools/histo/p2d \
+  /usr/local/include/Geant4/tools/histo/p2 \
+  /usr/local/include/Geant4/G4ToolsAnalysisManager.icc \
+  /usr/local/include/Geant4/G4GenericAnalysisManager.icc \
+  /usr/local/include/Geant4/G4GenericFileManager.hh \
+  /usr/local/include/Geant4/G4GenericFileManager.icc
 
 CMakeFiles/BNCT.dir/src/BNCTEventAction.cc.o: ../src/BNCTEventAction.cc \
   /usr/include/stdc-predef.h \
@@ -4981,6 +5049,8 @@ CMakeFiles/BNCT.dir/src/BNCTEventAction.cc.o: ../src/BNCTEventAction.cc \
   ../include/BNCTDetectorSD.hh \
   /usr/local/include/Geant4/G4VSensitiveDetector.hh \
   ../include/BNCTDetectorHit.hh \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h \
   ../include/BNCTDetectorConstruction.hh \
   /usr/local/include/Geant4/G4Box.hh \
   /usr/local/include/Geant4/G4GeomTypes.hh \
@@ -10735,6 +10805,8 @@ CMakeFiles/BNCT.dir/src/BNCTPrimaryGeneratorAction.cc.o: ../src/BNCTPrimaryGener
   /usr/local/include/Geant4/G4VHit.hh \
   /usr/local/include/Geant4/G4THitsCollection.hh \
   /usr/local/include/Geant4/G4Allocator.hh \
+  /usr/include/c++/11/unordered_set \
+  /usr/include/c++/11/bits/unordered_set.h \
   /usr/local/include/Geant4/G4SystemOfUnits.hh \
   /usr/local/include/Geant4/G4Event.hh \
   /usr/local/include/Geant4/G4GeneralParticleSource.hh \
@@ -14997,41 +15069,41 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 ../src/BNCTMatrix.cc:
 
-/usr/local/include/Geant4/G4GenericFileManager.icc:
+../src/BNCTLet.cc:
 
-/usr/local/include/Geant4/G4ToolsAnalysisManager.icc:
+/usr/local/include/Geant4/G4StateManager.icc:
 
-/usr/local/include/Geant4/tools/histo/p2:
+/usr/local/include/Geant4/G4VExceptionHandler.hh:
 
-/usr/local/include/Geant4/tools/histo/p2d:
+/usr/local/include/Geant4/G4StateManager.hh:
 
-/usr/local/include/Geant4/tools/histo/p1:
+/usr/local/include/Geant4/G4EmSecondaryParticleType.hh:
 
-/usr/local/include/Geant4/G4ionEffectiveCharge.hh:
+/usr/local/include/Geant4/G4ParticleChangeForLoss.hh:
 
-/usr/local/include/Geant4/tools/histo/p1d:
+/usr/local/include/Geant4/G4EmTableType.hh:
 
-/usr/local/include/Geant4/tools/histo/b3:
+/usr/local/include/Geant4/G4EmModelManager.hh:
 
-/usr/local/include/Geant4/tools/histo/h3:
+/usr/local/include/Geant4/G4VContinuousDiscreteProcess.hh:
 
-/usr/local/include/Geant4/tools/histo/b2:
+/usr/local/include/Geant4/G4LossTableManager.hh:
 
-/usr/local/include/Geant4/tools/histo/h2:
+../include/BNCTParameterMessenger.hh:
 
-/usr/local/include/Geant4/tools/histo/h2d:
+/usr/local/include/Geant4/G4ParticleHPThermalScatteringData.hh:
 
-/usr/local/include/Geant4/G4AutoDelete.hh:
+/usr/local/include/Geant4/G4ParticleHPThermalScatteringNames.hh:
 
-/usr/local/include/Geant4/tools/histo/axes:
+/usr/local/include/Geant4/G4ParticleHPThermalScattering.hh:
 
-/usr/local/include/Geant4/tools/histo/histo_data:
+/usr/local/include/Geant4/G4ParticleHPElasticData.hh:
 
-/usr/local/include/Geant4/tools/histo/base_histo:
+/usr/local/include/Geant4/G4WattFissionSpectrumValues.hh:
 
-/usr/local/include/Geant4/tools/histo/h1:
+/usr/local/include/Geant4/G4FPYSamplingOps.hh:
 
-/usr/local/include/Geant4/G4TP2ToolsManager.hh:
+/usr/local/include/Geant4/G4ENDFYieldDataContainer.hh:
 
 /usr/include/c++/11/ctime:
 
@@ -15059,6 +15131,8 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/c++/11/bits/stl_vector.h:
 
+/usr/include/c++/11/bits/unordered_set.h:
+
 /usr/local/include/Geant4/CLHEP/Random/RandPoisson.h:
 
 /usr/local/include/Geant4/G4VTrajectoryModel.hh:
@@ -15079,8 +15153,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/CLHEP/Random/RandBit.icc:
 
-/usr/local/include/Geant4/G4FPYSamplingOps.hh:
-
 /usr/local/include/Geant4/CLHEP/Utility/memory.h:
 
 /usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
@@ -15088,6 +15160,12 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/include/x86_64-linux-gnu/bits/locale.h:
 
 /usr/local/include/Geant4/CLHEP/Random/RandChiSquare.icc:
+
+/usr/local/include/Geant4/G4ShiftedGaussian.hh:
+
+/usr/local/include/Geant4/CLHEP/Vector/Rotation.h:
+
+/usr/local/include/Geant4/tools/histo/p2d:
 
 /usr/local/include/Geant4/CLHEP/Random/RandChiSquare.h:
 
@@ -15100,6 +15178,8 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/CLHEP/Random/RandBreitWigner.icc:
 
 /usr/include/c++/11/backward/auto_ptr.h:
+
+/usr/local/include/Geant4/tools/histo/h2d:
 
 /usr/local/include/Geant4/CLHEP/Random/Random.h:
 
@@ -15229,13 +15309,15 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
 
+../src/BNCTInteractionParameters.cc:
+
+/usr/local/include/Geant4/G4NavigationHistory.icc:
+
+/usr/local/include/Geant4/CLHEP/Geometry/Transform3D.h:
+
 /usr/local/include/Geant4/G4Element.hh:
 
 /usr/local/include/Geant4/G4NoProcess.hh:
-
-/usr/local/include/Geant4/tools/histo/b1:
-
-/usr/local/include/Geant4/G4ParticleTable.icc:
 
 /usr/include/c++/11/bits/allocated_ptr.h:
 
@@ -15309,6 +15391,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/geomdefs.hh:
 
+/usr/local/include/Geant4/G4FPYTreeStructures.hh:
+
+/usr/include/c++/11/iterator:
+
 /usr/local/include/Geant4/G4Region.icc:
 
 /usr/include/c++/11/atomic:
@@ -15336,8 +15422,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4SmartVoxelProxy.icc:
 
 /usr/local/include/Geant4/tools/ntuple_booking:
-
-/usr/local/include/Geant4/G4VContinuousDiscreteProcess.hh:
 
 /usr/include/c++/11/bit:
 
@@ -15391,6 +15475,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4UserStackingAction.hh:
 
+/usr/local/include/Geant4/G4ParticleTable.icc:
+
+/usr/local/include/Geant4/tools/histo/b1:
+
 /usr/include/c++/11/complex:
 
 /usr/include/x86_64-linux-gnu/bits/math-vector.h:
@@ -15420,12 +15508,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4Allocator.hh:
 
 /usr/local/include/Geant4/CLHEP/Utility/defs.h:
-
-/usr/local/include/Geant4/tools/histo/profile_data:
-
-/usr/include/c++/11/bits/parse_numbers.h:
-
-../include/BNCTParameterMessenger.hh:
 
 /usr/include/c++/11/thread:
 
@@ -15475,11 +15557,7 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4SDStructure.hh:
 
-/usr/local/include/Geant4/G4HadronPhysicsQGSP_BIC_HP.hh:
-
-/usr/local/include/Geant4/G4TP1ToolsManager.hh:
-
-/usr/local/include/Geant4/G4ExceptionSeverity.hh:
+/usr/local/include/Geant4/tools/histo/p1:
 
 /usr/local/include/Geant4/G4MaterialCutsCouple.hh:
 
@@ -15659,8 +15737,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/local/include/Geant4/G4ENDFYieldDataContainer.hh:
-
 /usr/local/include/Geant4/CLHEP/Geometry/BasicVector3D.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
@@ -15803,6 +15879,8 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4GPILSelection.hh:
 
+/usr/local/include/Geant4/tools/histo/b3:
+
 /usr/include/c++/11/tr1/gamma.tcc:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
@@ -15845,9 +15923,13 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/c++/11/bits/alloc_traits.h:
 
-/usr/local/include/Geant4/G4StateManager.hh:
-
 /usr/local/include/Geant4/G4UIdirectory.hh:
+
+/usr/local/include/Geant4/G4VEnergyLossProcess.hh:
+
+../include/BNCTActionInitialization.hh:
+
+/usr/include/c++/11/pstl/pstl_config.h:
 
 /usr/local/include/Geant4/CLHEP/Vector/BoostZ.h:
 
@@ -15953,10 +16035,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
-/usr/include/c++/11/iterator:
-
-/usr/local/include/Geant4/G4FPYTreeStructures.hh:
-
 /usr/include/c++/11/bits/stl_function.h:
 
 /usr/local/include/Geant4/G4ParticleHPManager.hh:
@@ -16018,6 +16096,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4Deuteron.hh:
 
 /usr/include/c++/11/cwchar:
+
+/usr/local/include/Geant4/G4FFGDefaultValues.hh:
+
+/usr/local/include/Geant4/G4AccVector.hh:
 
 /usr/include/c++/11/bits/exception_defines.h:
 
@@ -16109,9 +16191,7 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4ParticleChange.icc:
 
-/usr/local/include/Geant4/CLHEP/Vector/Rotation.h:
-
-/usr/local/include/Geant4/G4ShiftedGaussian.hh:
+/usr/local/include/Geant4/G4ToolsAnalysisManager.icc:
 
 /usr/include/c++/11/exception:
 
@@ -16273,8 +16353,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
-/usr/local/include/Geant4/G4ParticleHPElasticData.hh:
-
 /usr/include/c++/11/string:
 
 /usr/include/c++/11/bits/basic_string.h:
@@ -16308,6 +16386,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/include/c++/11/bits/algorithmfwd.h:
 
 /usr/include/c++/11/bits/basic_string.tcc:
+
+/usr/local/include/Geant4/G4FPYNubarValues.hh:
+
+/usr/local/include/Geant4/CLHEP/Random/RandBinomial.h:
 
 /usr/local/include/Geant4/G4HCofThisEvent.hh:
 
@@ -16383,6 +16465,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
+/usr/local/include/Geant4/G4ENDFTapeRead.hh:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
+
 /usr/include/string.h:
 
 /usr/local/include/Geant4/G4KaonZero.hh:
@@ -16445,6 +16531,8 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4THitsCollection.hh:
 
+/usr/include/c++/11/unordered_set:
+
 /usr/include/c++/11/clocale:
 
 /usr/include/c++/11/bits/istream.tcc:
@@ -16474,10 +16562,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4AccType.hh:
 
 /usr/include/c++/11/bitset:
-
-/usr/local/include/Geant4/G4GenericAnalysisManager.icc:
-
-/usr/local/include/Geant4/G4VAccumulable.icc:
 
 /usr/include/c++/11/valarray:
 
@@ -16592,12 +16676,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 ../include/BNCTParticles.hh:
 
 /usr/local/include/Geant4/PTL/Macros.hh:
-
-/usr/local/include/Geant4/tools/histo/h3d:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
-
-/usr/local/include/Geant4/PTL/ScopeDestructor.hh:
 
 /usr/local/include/Geant4/PTL/Task.hh:
 
@@ -16791,6 +16869,12 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4AccUnorderedMap.icc:
 
+/usr/local/include/Geant4/G4HadronPhysicsQGSP_BIC_HP.hh:
+
+/usr/local/include/Geant4/G4ExceptionSeverity.hh:
+
+/usr/local/include/Geant4/G4TP1ToolsManager.hh:
+
 /usr/local/include/Geant4/G4EmSaturation.hh:
 
 /usr/local/include/Geant4/G4VPhysicalVolume.hh:
@@ -16943,9 +17027,9 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4PVPlacement.hh:
 
-/usr/local/include/Geant4/G4GenericFileManager.hh:
-
 /usr/include/locale.h:
+
+/usr/local/include/Geant4/G4GenericFileManager.hh:
 
 /usr/local/include/Geant4/G4UserLimits.icc:
 
@@ -16977,12 +17061,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4AntiNeutrinoE.hh:
 
-/usr/local/include/Geant4/tools/eqT:
-
-/usr/include/c++/11/climits:
-
-/usr/local/include/Geant4/G4TableTemplate.hh:
-
 /usr/local/include/Geant4/G4OpticalPhoton.hh:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
@@ -16990,6 +17068,8 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4UnknownParticle.hh:
 
 /usr/local/include/Geant4/G4ChargedUnknownParticle.hh:
+
+/usr/local/include/Geant4/tools/histo/base_histo:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
@@ -17005,9 +17085,15 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4Electron.hh:
 
+/usr/local/include/Geant4/tools/histo/histo_data:
+
 /usr/local/include/Geant4/G4ParticleHPReactionWhiteBoard.hh:
 
 /usr/local/include/Geant4/G4NeutrinoMu.hh:
+
+/usr/local/include/Geant4/G4ionEffectiveCharge.hh:
+
+/usr/local/include/Geant4/tools/histo/p1d:
 
 /usr/local/include/Geant4/G4AntiNeutrinoMu.hh:
 
@@ -17045,17 +17131,11 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4Upsilon.hh:
 
-/usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
-
-/usr/local/include/Geant4/G4ENDFTapeRead.hh:
-
 /usr/local/include/Geant4/G4Proton.hh:
 
 /usr/local/include/Geant4/G4Neutron.hh:
 
 /usr/local/include/Geant4/G4SigmaPlus.hh:
-
-/usr/local/include/Geant4/G4WattFissionSpectrumValues.hh:
 
 /usr/local/include/Geant4/G4VCrossSectionDataSet.hh:
 
@@ -17066,8 +17146,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4HadFinalState.hh:
 
 /usr/local/include/Geant4/G4XiZero.hh:
-
-/usr/local/include/Geant4/G4StateManager.icc:
 
 /usr/local/include/Geant4/G4OmegaMinus.hh:
 
@@ -17103,6 +17181,12 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4XibZero.hh:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/local/include/Geant4/PTL/ScopeDestructor.hh:
+
+/usr/local/include/Geant4/tools/histo/h3d:
+
 /usr/local/include/Geant4/G4ViewParameters.hh:
 
 /usr/local/include/Geant4/G4OmegabMinus.hh:
@@ -17133,6 +17217,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4AccValue.hh:
 
+/usr/include/c++/11/bits/parse_numbers.h:
+
+/usr/local/include/Geant4/tools/histo/profile_data:
+
 /usr/local/include/Geant4/G4EmProcessSubType.hh:
 
 /usr/local/include/Geant4/G4AccArray.icc:
@@ -17140,6 +17228,78 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4AccVector.icc:
 
 /usr/local/include/Geant4/G4GenericMessenger.hh:
+
+/usr/include/stdio.h:
+
+/usr/local/include/Geant4/G4VAnalysisManager.hh:
+
+/usr/local/include/Geant4/G4StackManager.hh:
+
+/usr/local/include/Geant4/G4AnalysisVerbose.hh:
+
+/usr/local/include/Geant4/G4AnalysisUtilities.hh:
+
+/usr/local/include/Geant4/G4WendtFissionFragmentGenerator.hh:
+
+../include/BNCTRunAction.hh:
+
+/usr/local/include/Geant4/G4HnInformation.hh:
+
+/usr/local/include/Geant4/G4BinScheme.hh:
+
+/usr/local/include/Geant4/G4AntiSigmabPlus.hh:
+
+/usr/local/include/Geant4/G4NtupleBookingManager.hh:
+
+/usr/local/include/Geant4/G4BlockingList.icc:
+
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+
+/usr/local/include/Geant4/tools/cids:
+
+/usr/local/include/Geant4/tools/histo/b2:
+
+/usr/local/include/Geant4/tools/typedefs:
+
+/usr/local/include/Geant4/G4InterpolationManager.hh:
+
+/usr/local/include/Geant4/tools/forit:
+
+/usr/local/include/Geant4/G4VFileManager.hh:
+
+/usr/local/include/Geant4/CLHEP/Random/RanshiEngine.h:
+
+/usr/local/include/Geant4/G4THnToolsManager.hh:
+
+/usr/include/c++/11/cstdint:
+
+/usr/local/include/Geant4/G4THnMessenger.hh:
+
+/usr/local/include/Geant4/G4TP2ToolsManager.hh:
+
+/usr/local/include/Geant4/tools/histo/h1:
+
+/usr/local/include/Geant4/G4AutoDelete.hh:
+
+/usr/local/include/Geant4/tools/histo/axes:
+
+/usr/local/include/Geant4/G4TableTemplate.hh:
+
+/usr/include/c++/11/climits:
+
+/usr/local/include/Geant4/tools/eqT:
+
+/usr/local/include/Geant4/tools/histo/h2:
+
+/usr/local/include/Geant4/tools/histo/h3:
+
+/usr/local/include/Geant4/tools/histo/p2:
+
+/usr/local/include/Geant4/G4VAccumulable.icc:
+
+/usr/local/include/Geant4/G4GenericAnalysisManager.icc:
+
+/usr/local/include/Geant4/G4GenericFileManager.icc:
 
 ../include/BNCTEventActionMessenger.hh:
 
@@ -17165,10 +17325,6 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4HadSecondary.hh:
 
-/usr/local/include/Geant4/G4AccVector.hh:
-
-/usr/local/include/Geant4/G4FFGDefaultValues.hh:
-
 /usr/local/include/Geant4/CLHEP/Random/RandGeneral.h:
 
 /usr/local/include/Geant4/G4VHitsCollection.hh:
@@ -17178,6 +17334,10 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 /usr/local/include/Geant4/G4PhysicsListHelper.hh:
 
 /usr/local/include/Geant4/CLHEP/Vector/BoostY.h:
+
+/usr/local/include/Geant4/G4GenericAnalysisManager.hh:
+
+/usr/local/include/Geant4/CLHEP/Vector/BoostY.icc:
 
 ../src/BNCTParticles.cc:
 
@@ -17215,15 +17375,9 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4ParticleHPVector.hh:
 
-/usr/local/include/Geant4/G4InterpolationManager.hh:
-
-/usr/local/include/Geant4/tools/typedefs:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
 /usr/local/include/Geant4/G4ParticleHPHash.hh:
-
-/usr/local/include/Geant4/G4EmTableType.hh:
 
 /usr/local/include/Geant4/G4ParticleHPInterpolator.hh:
 
@@ -17235,82 +17389,4 @@ CMakeFiles/BNCT.dir/src/PassiveProtonBeamLine.cc.o: ../src/PassiveProtonBeamLine
 
 /usr/local/include/Geant4/G4StableIsotopes.hh:
 
-/usr/local/include/Geant4/G4WendtFissionFragmentGenerator.hh:
-
-/usr/local/include/Geant4/G4AnalysisUtilities.hh:
-
 /usr/local/include/Geant4/G4DynamicParticleVector.hh:
-
-/usr/local/include/Geant4/CLHEP/Random/RandBinomial.h:
-
-/usr/local/include/Geant4/G4FPYNubarValues.hh:
-
-/usr/local/include/Geant4/G4ParticleHPThermalScattering.hh:
-
-/usr/local/include/Geant4/G4ParticleHPThermalScatteringNames.hh:
-
-/usr/local/include/Geant4/G4ParticleHPThermalScatteringData.hh:
-
-/usr/local/include/Geant4/G4NavigationHistory.icc:
-
-/usr/local/include/Geant4/CLHEP/Geometry/Transform3D.h:
-
-../src/BNCTInteractionParameters.cc:
-
-/usr/local/include/Geant4/G4LossTableManager.hh:
-
-../include/BNCTActionInitialization.hh:
-
-/usr/include/c++/11/pstl/pstl_config.h:
-
-/usr/local/include/Geant4/G4VEnergyLossProcess.hh:
-
-/usr/local/include/Geant4/G4EmModelManager.hh:
-
-/usr/local/include/Geant4/G4StackManager.hh:
-
-/usr/local/include/Geant4/G4AnalysisVerbose.hh:
-
-/usr/local/include/Geant4/G4ParticleChangeForLoss.hh:
-
-/usr/local/include/Geant4/G4EmSecondaryParticleType.hh:
-
-/usr/local/include/Geant4/G4VExceptionHandler.hh:
-
-../src/BNCTLet.cc:
-
-/usr/local/include/Geant4/CLHEP/Vector/BoostY.icc:
-
-/usr/local/include/Geant4/G4GenericAnalysisManager.hh:
-
-/usr/include/stdio.h:
-
-/usr/local/include/Geant4/G4VAnalysisManager.hh:
-
-../include/BNCTRunAction.hh:
-
-/usr/local/include/Geant4/G4HnInformation.hh:
-
-/usr/local/include/Geant4/G4BinScheme.hh:
-
-/usr/local/include/Geant4/G4AntiSigmabPlus.hh:
-
-/usr/local/include/Geant4/G4NtupleBookingManager.hh:
-
-/usr/local/include/Geant4/G4BlockingList.icc:
-
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
-
-/usr/local/include/Geant4/tools/cids:
-
-/usr/local/include/Geant4/tools/forit:
-
-/usr/local/include/Geant4/G4VFileManager.hh:
-
-/usr/local/include/Geant4/CLHEP/Random/RanshiEngine.h:
-
-/usr/local/include/Geant4/G4THnToolsManager.hh:
-
-/usr/include/c++/11/cstdint:
-
-/usr/local/include/Geant4/G4THnMessenger.hh:

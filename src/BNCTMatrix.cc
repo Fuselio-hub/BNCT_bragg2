@@ -61,10 +61,10 @@ BNCTAnalysis* BNCTAnalysis::GetInstance(){
 
     if (instance == 0) instance = new BNCTAnalysis;
     return instance;
-}
+} 
 
 BNCTMatrix* BNCTMatrix::instance = NULL;
-G4bool BNCTMatrix::secondary = false;
+G4bool BNCTMatrix::secondary = true;
 
 
 // Only return a pointer to matrix

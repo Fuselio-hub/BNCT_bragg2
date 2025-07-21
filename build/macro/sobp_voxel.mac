@@ -16,7 +16,7 @@
 /Physics/addPhysics BNCT
 
 
-/run/numberOfThreads 1
+/run/numberOfThreads 4
 
 # Inizializza geometria e fisica
 /run/initialize
@@ -46,10 +46,10 @@
 
 /gps/particle proton
 /gps/pos/type Beam
-/gps/pos/shape Circle
-/gps/pos/radius 5.0 cm
-/gps/pos/sigma_r 0.0 mm
-/gps/pos/centre -5.0 0.0 0.0 cm
+/gps/pos/shape Square
+/gps/pos/halfx 2 cm
+/gps/pos/halfy 2 cm
+/gps/pos/centre -5. 0. 0. cm
 /gps/direction 1.0 0.0 0.0
 
 
@@ -119,24 +119,29 @@
 /changePhantom/size 20 20 20  cm
 /changePhantom/position 10 0 0 cm
 
+# soft tissue
+/changePhantom/material soft_tissue
 
 ###################################################
 # CARATTERISTICHE DEL DETECTOR (TUMORE)
 ###################################################
 
 /changeB10/size 5 20 20 cm 
-/changeB10/voxelSize 1 200 200 mm
+/changeB10/voxelSize 0.1 40 40 mm
 
 ######## MATERIALE
 
 # senza boro
-#/changeB10/material soft_tissue
+/changeB10/material soft_tissue
 
-# tumore con boro10 
+# tumore con boro10 100 ppm
 #/changeB10/material BoroTissue
 
 # tumore con boro11 100ppm (per confronto)
 #/changeB10/material Boro11Tissue
+
+# tumore con 1% di boro10 (per confronto)
+#/changeB10/material WaterB10
 
 ######## POSIZIONE
 
@@ -157,5 +162,5 @@
 /analysis/secondary true
 #/analysis/computeLet
 
-/run/printProgress 1250
-/run/beamOn 10000
+/run/printProgress 12500
+/run/beamOn 100000

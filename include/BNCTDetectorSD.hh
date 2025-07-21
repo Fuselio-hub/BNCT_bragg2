@@ -31,6 +31,7 @@
 #include "G4VSensitiveDetector.hh"
 #include "BNCTDetectorHit.hh"
 #include "globals.hh"
+#include <unordered_set>
 
 class G4Step;
 class G4HCofThisEvent;
@@ -54,6 +55,8 @@ private:
     BNCTDetectorHitsCollection *HitsCollection;
     G4String sensitiveDetectorName;
     BNCTRBEAccumulable* fRBEAccumulable{ nullptr };
+    std::unordered_set<G4int> recordedTracks;
+
 };
 #endif
 
